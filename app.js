@@ -24,7 +24,7 @@ app.use((_req, res, next) => {
 
   next();
 });
-app.get("https://api-graphql-production.up.railway.app/", (req, res) => res.send("Welcome to my api"));
+app.get("/", (req, res) => res.send("Welcome to my api"));
 
 const schema = makeExecutableSchema({
   typeDefs,
@@ -38,7 +38,7 @@ async function start() {
   });
 
   await server.start();
-  server.applyMiddleware({ app, path: "https://api-graphql-production.up.railway.app/graphql" });
+  server.applyMiddleware({ app, path: "/graphql" });
 
   app.listen(process.env.PORT, () => {
     console.log(`Server running on ${process.env.PORT}`);
