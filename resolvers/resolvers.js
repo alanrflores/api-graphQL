@@ -125,7 +125,7 @@ const resolvers = {
             email: context?.user?.email,
           },
           back_urls: {
-            success: "http://localhost:5173/success",
+            success: "https://jordansneakers.netlify.app/success",
             failure: "",
             pending: "",
           },
