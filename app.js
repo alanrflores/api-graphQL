@@ -41,7 +41,7 @@ async function start() {
   server.applyMiddleware({ app, path: "/graphql" });
 
   app.listen(process.env.PORT, () => {
-    console.log(`Server running on ${process.env.MONGOPORT}`);
+    console.log(`Server running on ${process.env.PORT}`);
   });
 }
 
