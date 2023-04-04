@@ -11,7 +11,6 @@ mercadopago.configure({ access_token: process.env.MP_ACCESS_KEY });
 
 const resolvers = {
   Query: {
-    hello: () => "Hello World",
     getAllProduct: async () => {
       const product = await Product.find();
       return product;
