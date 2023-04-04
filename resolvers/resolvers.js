@@ -173,6 +173,7 @@ const resolvers = {
     loginUser: async (_, { loginInput: { email, password } }) => {
       const user = await User.findOne({ email });
       console.log("user", user);
+      if(!user) throw new Error('User not found!')
       const valid = await bcrypt.compare(password, user.password);
       if (user && valid) {
         const token = jwt.sign(
