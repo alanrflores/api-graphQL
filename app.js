@@ -19,7 +19,7 @@ mercadopago.configure({ access_token: process.env.MP_ACCESS_KEY });
 app.use(bodyParser.urlencoded({ extended: true })); //extended por deprecación
 app.use(bodyParser.json());
 app.use((_req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "*" , 'https://jordansneakers.vercel.app');
   res.header("Access-Control-Allow-Headers", "*");
 
   next();
